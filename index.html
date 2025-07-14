@@ -1,0 +1,419 @@
+
+<style>
+@font-face {
+    font-family: 'AdiHaus';
+    src: url('https://assets.codepen.io/6060109/adihaus_regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "AdiHaus";
+    src: url("https://assets.codepen.io/6060109/adihaus_bold.ttf") format("truetype");
+    font-weight: bold;
+    font-style: normal;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    border-style: none;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+  
+:root {
+    --theme-color-black: #333333; /* rgba(51, 51, 51, 1) */
+    --theme-color-brown: #423A3A; 
+    --theme-color-red: #CD3A24;
+    --theme-color-white: #FEFFFF; /* rgba(254, 255, 255, 1) */
+}
+  
+/* ---------- MAIN BODY DECLERATIONS ---------- */
+
+html, body {
+    background-color: var(--theme-color-white);
+    font-family: "AdiHaus";
+    font-size: 14px;
+    height: 100%;
+    width: 100%;
+}
+
+input {
+    font-family: 'AdiHaus';
+}
+
+.mobile-container {
+    margin: 0 auto;
+    max-width: 500px;
+    min-width: 300px;
+}
+
+.hero-image-desktop {
+    display: none;
+}
+
+/* ---------- HERO BANNER DECLERATIONS ---------- */
+.hero-banner {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.hero-banner .logo-wrapper {
+    height: auto;
+    margin: 0 auto;
+    padding: 1rem 0;
+    width: auto;
+}
+    
+    .logo-wrapper img {
+        display: block;
+        height: 2.5rem;
+        margin: 0 auto;
+        width: auto;
+    }
+
+.hero-banner .hero-image {
+    background-image: url(images/athlete.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 376px;
+    width: 100%;
+}
+
+/* ---------- TEXT INFO DECLERATIONS ---------- */
+.text-info {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    width: 100%;
+}
+
+    .text-info > * {
+        padding: 0 2.5rem 1rem;
+    }
+
+    /* intended for the first h2 within .text-info */
+    .text-info h2:nth-child(1) {
+        color: var(--theme-color-red);
+        font-weight: normal;
+        padding-top: 1.8rem;
+        padding-bottom: 1rem;
+    }
+
+    .text-info h2 {
+        font-size: 3.5rem;
+        font-weight: bold;
+        color: var(--theme-color-brown);
+        letter-spacing: 5px;
+        text-transform: uppercase;
+    }
+
+    .text-info p {
+        color: var(--theme-color-black);
+        line-height: 24px;
+    }
+
+    .text-info .email-signup {
+        margin: 1rem 0 6rem;
+        position: relative;
+        width: 100%;
+    }
+    
+        .email-signup .email-input {
+            border: 1px solid rgba(51, 51, 51, .7);
+            border-radius: 3px;
+            padding: 1rem 1.5rem;
+            opacity: .5;
+            width: 100%;
+        }
+
+        .email-signup .email-input:focus {
+            background-color: var(--theme-color-white);
+            outline: 2px solid var(--theme-color-black);
+            opacity: 1;
+        }
+
+        .email-signup .email-submit {
+            background-color: var(--theme-color-black);
+            border-bottom: 1px solid var(--theme-color-black);
+            border-radius: 2px;
+            color: var(--theme-color-white);
+            cursor: pointer;
+            font-weight: bold;
+            opacity: 1;
+            padding: 1rem 1.5rem;
+            position: absolute;
+            right: 0;
+            margin-right: 2.5rem;
+            z-index: 10;
+        }
+
+@media only screen and (min-width: 768px) {
+    body {
+       /* background-image: url(); */
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        flex-direction: row;
+        height: 100%;
+    }
+
+    main {
+        display: flex;
+        flex-direction: column;
+        height: inherit;
+        max-width: 100%;
+        margin: 0 auto;
+        padding-left: 3.5rem;
+    }
+
+    .mobile-container {
+        width: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+
+    .hero-banner .logo-wrapper {
+        margin-left: auto;
+        width: auto%;
+        display: flex;
+        align-items: start;
+        flex-direction: column;
+    }
+        .logo-wrapper img {
+            margin: 0 0 0;
+            padding-left: 2.5rem;
+        }
+
+    .hero-image {
+        display: none;
+    }
+
+    .text-info {
+        text-align: left;
+        align-items: start;
+    }
+    
+        .text-info h2 {
+            font-size: 4.5rem;
+        }
+
+        .text-info p {
+            font-size: 16px;
+        }
+
+        .text-info input {
+            font-size: 16px;
+        }
+  
+        .text-info .email-signup {
+            margin: 1rem 0 7rem;
+        }
+
+    .hero-image-desktop {
+        display: block;
+        height: 100%;
+        width: 55vw;
+    }
+
+    .hero-image-desktop img {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 30% 100%);
+        height: 100%;
+        object-fit: cover;
+        width: 100%;
+    }
+  
+    .email-signup .email-submit {
+        border-bottom: 2px solid var(--theme-color-black);
+    }
+}
+</style>
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+<meta name="description" content="I Am An Olympian empowers young athletes by supporting them financially. Investors support their favorite athletes by purchasing stakes in their perceived value on our platform.">
+<title>I Am An Olympian</title>
+
+<!-- Twitter Card meta tags -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@YourTwitterHandle">
+<meta name="twitter:title" content="I Am An Olympian - Empowering Young Athletes">
+<meta name="twitter:description" content="I Am An Olympian empowers young athletes by supporting them financially. Investors support their favorite athletes by purchasing stakes in their perceived value on our platform.">
+<meta name="twitter:image" content="https://www.iamanolympian.com/images/logo.jpg">
+
+<!-- Open Graph meta tags for Facebook and WhatsApp -->
+<meta property="og:title" content="I Am An Olympian - Empowering Young Athletes">
+<meta property="og:description" content="I Am An Olympian empowers young athletes by supporting them financially. Investors support their favorite athletes by purchasing stakes in their perceived value on our platform.">
+<meta property="og:image" content="https://www.iamanolympian.com/images/whatsapp-logo.jpg">
+<meta property="og:url" content="https://www.iamanolympian.com">
+<meta property="og:type" content="website">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<!-- Canonical URL -->
+<link rel="canonical" href="https://www.iamanolympian.com/" />
+
+<!-- JSON-LD structured data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "I Am An Olympian",
+  "url": "https://www.iamanolympian.com",
+  "logo": "https://www.iamanolympian.com/images/logo.jpg",
+  "sameAs": [
+    "https://www.facebook.com/YourFacebookPage",
+    "https://www.twitter.com/YourTwitterHandle",
+    "https://www.instagram.com/YourInstagramHandle"
+  ],
+  "description": "I Am An Olympian empowers young athletes by supporting them financially. Investors support their favorite athletes by purchasing stakes in their perceived value on our platform."
+}
+</script>
+
+    <!-- Other head elements -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    
+
+
+<div class="mobile-container">
+  <header>
+    <section class="hero-banner">
+      <div class="logo-wrapper">
+     
+      </div>
+      <div class="hero-image"></div>
+    </section>
+  </header>
+  <main>
+    <article class="text-info">
+<h2>Olympian Dreams</h2>
+      <p>I Am An Olympian empowers young athletes by supporting them financially. Investors support their favorite athletes by purchasing stakes in their perceived value on our platform, with caps ensuring fairness. As athletes shine in their sports, their value skyrockets, allowing investors to sell their stakes for profit.
+     <br> <br><strong>"Your Dream. Our Support."<br><br></strong>
+      Athletes earn returns and also benefit from a maturity fund unlocked at age 18. 
+      
+     <br> <br><strong>"Empower Dreams. Earn Rewards."<br></strong></p>
+     
+     <p>Follow us on X to celebrate future triumphs and support the next generation of champions on their journey to Mount Olympus!</p>    
+     
+  
+  </article>
+  
+ 
+  <center>
+    
+<a href="https://x.com/IAMANOLYMPIAN" target="_blank">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAMKADAAQAAAABAAAAMAAAAADbN2wMAAAEwklEQVRoBe1YSWgUQRSNMaJBBcUlqIe4obggomKigiiIy0lwBxEF8RRcLhJcDjl48eSGF4PiUS8e1IM5SGLcQMUVD66oICrRuGJccHmv88v+XXZVV4+CM+CHP/9X/fdeVfdUV9dMWdl/K647MA3TaYG/h/8oMuecmuG18FTj5L/Ci23i9nw4x5q0K2gpgcmbi7lgLqCLSRD5FfVS7WJOv2By3TlBfQG8ulKyaO7lpTTjtLmGXMBKEHm1Ph+D+se0AXL2nQS+As6xtufkOnefNxCqDhCrA8Y8ZIXES+D3lHFWIH7P0BNoHHyDtgLWFd4NzrxdeT1yGu8a76BPx1V7AF4VnDYL/gnuwpp+QJJmCq64WeDjELlcDE7vywPR/1zVDMYX24AfBadR+zXchzc14hNmCq7IuzJRGBsRNe4+2r2lttCqaZyd80ZMF95gxMc5uEKLgy2e1r4NeCWcy+UEXGMOom2sEYmupeXfgFkkBF78tQCO1hFqHHTRl+8WCpfLM7jG8uGj8WG8A9c1O99AIIzPVRPcrme1yU1YFsHUuTssEOZ8RL1bcP1WS20KIt+YhqfjTsHwmzzswGh8Wi4ScUgDufqegtZPqPsQNc7sWCw3WDXijsLL4bQdcM3Nk0cC+iMPmdhjQuaZ5AZc87dIjS+li6p2Bnl0hkFcq/o1NzQHPWmhRI1bIxJpW2ut1IYjvoNzA+grfVyC3H61Vt5cpOKQV4D4t/BhIsGHUmvorXU5atWCm4TIk6/GFpKLXBwKESHnHJxv6bSt9VAsH2VD8WnvXIWOa0n/2R3ZJmo8Dthv4mVqpGbkhU7Y5inZztQG5Gnr48Q8yLm21rlWLc8YNvavXgDF78HNL7o9yPWALWibrXO/VdO4PDlkkpaH7MJycrQe8JtwjdvKAoy1W3BdKySnVsIKEbE5XDqzRXU8YgfcYPhWniq1yYiut7TBZ0WRikMWIaTOO9snlixbj1zz9NbKb0TX8uZqmM40r4CNfwKZwaI6UiK31uNwjTVbK7fes1ZN47JyUJOWRfDV+UKbIHIjEF/A10l7AKK995tTK1+C5Pq0XTWRj4MLmNXPtTxHZPoj3oWT8wFufmn5ttbVgs8ax66DljQbENLmQ7tKZCoR+Y+Z5l1Bm+d9mr21tqKPy4h2BK55IXlE1B8hJBtTLwKcCE+ndp3tBjitO/w6XGP4INP44PMZ0rWsnLyEZRHs+gHF3ovcrps239L845jmO7VyGeo3uOG7YiSoP1zAtH7+fVIhZH4LaRjdx79NzI9+39a6K0DL6MrwcTCFrHgZFP7mpS2H88d5Fof1RjjNt7Vymd2Ah+hRK2EhpIdgVAlrJiL/agnhGcxS4fq2Vi6zjgBdkYqDGcQVXwI6WuBjEdvhLqyrvw2cQaLh21o3B2iLTBxcg7Kfd2SGQDmBR3Af3ldrApfLiGY//GZrLUftNNynQ37CXGCu8cWC5IN4Fe7ChvbXiZ4vDEHxlWes37iuwTcJki+kUx5BFz+tn98oT6tZtgSAND77IjNfJRu/OjtLRf8ZzZ1rraRNXwAPX6ViPEBGpi+AB69SsdS58p80nltcD02x9HOONa47zQKPxJ/hxTJhMw/O6Tzc/K5G+t/+/R34CcaaNKgk8BRNAAAAAElFTkSuQmCC" alt="Twitter" />
+</a>
+   <!-- <a href="https://instagram.com" target="_blank">
+      <img src="data:image/png;base64, iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/wcAAwAB/ug0ADAAAAAElFTkSuQmCC" alt="Instagram" />
+    </a>-->
+    
+    <!-- <a href="https://linkedin.com" target="_blank">
+      <img src="data:image/png;base64, iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/wcAAwAB/ug0ADAAAAAElFTkSuQmCC" alt="LinkedIn" />
+    </a>
+    --><br><br><br>
+    
+  </div>
+
+
+  
+ <!-- <section class="email-signup">
+  <form id="email-signup-form" method="POST">
+   
+    <input class="email-input" type="email" required placeholder="Email Address" name="email-address" id="email-address">
+    <input class="email-submit" value="Go" type="submit" />
+  </form>
+</section>
+
+-->
+
+<!--
+
+<script>
+  document.getElementById("email-signup-form").addEventListener("submit", function(event) {
+    event.preventDefault(); // Prevent form from submitting the usual way
+    
+    var email = document.getElementById("email-address").value; // Get the email from the input field
+    
+    // Check if email is valid
+    if (!email || !validateEmail(email)) {
+      alert("Please enter a valid email address.");
+      return;
+    }
+    
+    // Send the email via AJAX to the PHP script
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "process-email.php", true);
+    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    
+    xhr.onreadystatechange = function() {
+      if (xhr.readyState == 4 && xhr.status == 200) {
+        // Handle response here (you can display a confirmation message)
+        alert(xhr.responseText); // This will show the response from the PHP script
+      }
+    };
+    
+    // Send the email to the PHP script
+    xhr.send("email=" + encodeURIComponent(email));
+  });
+
+  // Basic email validation function
+  function validateEmail(email) {
+    var regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA0-9]{2,}$/;
+    return regex.test(email);
+  }
+</script>
+-->
+
+    </article>
+  </main>
+</div>
+<div class="hero-image-desktop" style="position: relative; height: 100vh;">
+  <img src="images/athlete.jpg" alt="Athlete" id="image1" 
+    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; transition: opacity 5s ease-in-out; opacity: 1;">
+  
+  <img src="images/mount-olympus-1.webp" alt="Mount Olympus" id="image2" 
+    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0; transition: opacity 5s ease-in-out;">
+    
+    <img src="images/watch.jpg" alt="Apple Watch" id="image3" 
+    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0; transition: opacity 5s ease-in-out;">
+    
+</div>
+
+<script>
+  window.onload = function() {
+    let currentImage = 1; // Start with the first image (image1)
+    
+    setInterval(function() {
+      if (currentImage === 1) {
+        // Fade out image1 and fade in image2
+        document.getElementById('image1').style.opacity = '0'; 
+        document.getElementById('image2').style.opacity = '1';
+        currentImage = 2; // Switch to image2
+      } else if (currentImage === 2) {
+        // Fade out image2 and fade in image3
+        document.getElementById('image2').style.opacity = '0'; 
+        document.getElementById('image3').style.opacity = '1';
+        currentImage = 3; // Switch to image3
+      } else {
+        // Fade out image3 and fade in image1
+        document.getElementById('image3').style.opacity = '0'; 
+        document.getElementById('image1').style.opacity = '1';
+        currentImage = 1; // Switch back to image1
+      }
+    }, 7000); // The interval is set to 7 seconds (for the 5s transition + 2s delay)
+  };
+</script>
